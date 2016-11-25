@@ -1,0 +1,27 @@
+<div class="holder">
+	<input ng-change="$ctrl.inputType()" ng-model="$ctrl.result" type="text" />
+	<div class="main">
+		<div class="numbers">
+			<span 
+				class="button button--{{key.color}}" 
+				ng-click="$ctrl.pressNumber(key.value)" 
+				ng-repeat="key in $ctrl.keys">
+				{{ key.value }}
+			</span>
+			<span 
+				class="button button--blue" 
+				ng-click="$ctrl.equals()">
+				=
+			</span>
+		</div>
+		<div class="operators">
+			<span class="button button--grey" ng-click="$ctrl.clearOne()"><</span>
+			<span 
+				ng-click="$ctrl.pressOperator(operator)"
+				ng-repeat="operator in $ctrl.operators" 
+				class="button button--grey">
+				{{ operator }}
+			</span>
+		</div>
+	</div>
+</div>
